@@ -1,0 +1,270 @@
+:root {
+  --background: #ffffff;
+  --text: #1a1a1a;
+  --muted: #666666;
+  --line: #e8e8e8;
+  --link: #1e5aa8;
+  --link-hover: #123d73;
+  --max-width: 1080px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: "Avenir Next", "Helvetica Neue", sans-serif;
+  font-size: 19px;
+  line-height: 1.78;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+.topbar {
+  border-bottom: 1px solid var(--line);
+}
+
+.topbar-inner {
+  width: min(calc(100% - 40px), var(--max-width));
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px 0;
+}
+
+.brand {
+  color: var(--text);
+  font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  font-size: 1.32rem;
+  font-weight: 700;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  font-size: 1.08rem;
+}
+
+.page {
+  width: min(calc(100% - 40px), var(--max-width));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 64px;
+  padding: 40px 0 72px;
+}
+
+.sidebar {
+  position: sticky;
+  top: 28px;
+  align-self: start;
+}
+
+.portrait {
+  display: block;
+  width: 120px;
+  height: 120px;
+  margin-bottom: 20px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  object-fit: cover;
+  background: #f5f5f5;
+}
+
+.sidebar h1 {
+  margin: 0;
+  color: var(--text);
+  font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  font-size: 2.55rem;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.role,
+.affiliation,
+.location,
+.sidebar-section p,
+.authors,
+.summary,
+.entry-meta {
+  color: var(--muted);
+}
+
+.role,
+.affiliation,
+.location {
+  margin: 8px 0 0;
+  font-size: 1.08rem;
+}
+
+.sidebar-section {
+  margin-top: 28px;
+}
+
+.sidebar-section h2,
+.section h2 {
+  margin: 0 0 12px;
+  color: var(--text);
+  font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  font-size: 1.68rem;
+  font-weight: 700;
+}
+
+.link-list,
+.news-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.link-list li + li,
+.news-list li + li,
+.publication + .publication,
+.entry + .entry {
+  margin-top: 10px;
+}
+
+.content {
+  min-width: 0;
+}
+
+.section + .section {
+  margin-top: 42px;
+}
+
+.section p {
+  margin: 0 0 14px;
+  font-size: 1.12rem;
+}
+
+.news-list li {
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1fr);
+  gap: 12px;
+}
+
+.news-list span {
+  color: var(--text);
+}
+
+.publication {
+  padding: 2px 0 14px;
+}
+
+.publication h3,
+.entry-title {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.18rem;
+  font-weight: 600;
+}
+
+.venue,
+.pub-links {
+  margin: 4px 0 0;
+}
+
+.venue {
+  color: var(--text);
+  font-size: 1.06rem;
+}
+
+.authors,
+.summary,
+.entry-meta,
+.link-list,
+.news-list {
+  font-size: 1.08rem;
+}
+
+.pub-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.pub-links a {
+  white-space: nowrap;
+}
+
+.pub-links .sep {
+  margin: 0 8px;
+  color: var(--muted);
+}
+
+.award-badge {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 10px;
+  padding: 2px 8px;
+  border: 1px solid #d8c38d;
+  border-radius: 999px;
+  background: #fff7df;
+  color: #8a5a00;
+  font-size: 0.86rem;
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+.entry {
+  padding: 2px 0;
+}
+
+@media (max-width: 860px) {
+  body {
+    font-size: 18px;
+  }
+
+  .topbar-inner,
+  .page {
+    width: min(calc(100% - 32px), var(--max-width));
+  }
+
+  .topbar-inner,
+  .page {
+    display: block;
+  }
+
+  .nav {
+    margin-top: 10px;
+  }
+
+  .page {
+    padding-top: 28px;
+  }
+
+  .sidebar {
+    position: static;
+    margin-bottom: 36px;
+  }
+
+  .sidebar h1 {
+    font-size: 2.3rem;
+  }
+
+  .news-list li {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}
