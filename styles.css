@@ -93,8 +93,8 @@ a:hover {
   display: block;
   position: relative;
   overflow: hidden;
-  width: 120px;
-  height: 120px;
+  width: 170px;
+  height: 170px;
   margin-bottom: 20px;
   border: 1px solid var(--line);
   border-radius: 50%;
@@ -106,10 +106,10 @@ a:hover {
   top: 50%;
   left: 50%;
   display: block;
-  width: 220%;
+  width: 170%;
   max-width: none;
   height: auto;
-  transform: translate(-53%, -60%);
+  transform: translate(-53%, -55%);
 }
 
 .sidebar h1 {
