@@ -91,13 +91,25 @@ a:hover {
 
 .portrait {
   display: block;
+  position: relative;
+  overflow: hidden;
   width: 120px;
   height: 120px;
   margin-bottom: 20px;
   border: 1px solid var(--line);
   border-radius: 50%;
-  object-fit: cover;
   background: #f5f5f5;
+}
+
+.portrait img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 300%;
+  max-width: none;
+  height: auto;
+  transform: translate(-53%, -60%);
 }
 
 .sidebar h1 {
