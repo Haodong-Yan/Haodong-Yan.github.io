@@ -298,9 +298,18 @@ a:hover {
   position: static;
 }
 
+.xiaohongshu {
+  margin: 14px 0 18px;
+}
+
 .xiaohongshu summary {
   width: fit-content;
+  padding: 5px 12px;
+  border: 1px solid #f1cbd3;
+  border-radius: 8px;
+  background: #fff5f7;
   color: #c72542;
+  font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
 }
