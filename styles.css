@@ -293,71 +293,48 @@ a:hover {
 }
 
 
-/* Social profile: native disclosure supports mouse, keyboard and touch. */
-.sidebar:has(.xiaohongshu[open]) {
-  position: static;
-}
+/* Keep the two desktop columns independently scrollable. */
+@media (min-width: 861px) {
+  body {
+    height: 100vh;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
 
-.xiaohongshu {
-  margin: 14px 0 18px;
-}
+  .topbar {
+    flex: none;
+  }
 
-.xiaohongshu summary {
-  width: fit-content;
-  padding: 5px 12px;
-  border: 1px solid #f1cbd3;
-  border-radius: 8px;
-  background: #fff5f7;
-  color: #c72542;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-}
+  .page {
+    flex: 1;
+    min-height: 0;
+    grid-template-rows: minmax(0, 1fr);
+    padding-bottom: 24px;
+  }
 
-.xiaohongshu summary:hover {
-  color: #9e1830;
-}
+  .sidebar,
+  .content {
+    min-height: 0;
+    overflow-y: scroll;
+    overscroll-behavior-y: contain;
+    scrollbar-gutter: stable;
+    scrollbar-width: thin;
+    scrollbar-color: #b8b8b8 #f5f5f5;
+    scroll-behavior: smooth;
+    padding-right: 14px;
+    padding-bottom: 16px;
+  }
 
-.xiaohongshu summary:focus-visible {
-  outline: 2px solid #c72542;
-  outline-offset: 5px;
-  border-radius: 2px;
-}
+  .sidebar {
+    position: static;
+    align-self: stretch;
+  }
 
-.xiaohongshu-card {
-  width: 100%;
-  max-width: 280px;
-  margin-top: 12px;
-  padding: 14px;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  background: #fff;
-}
-
-.xiaohongshu-card p {
-  margin: 0 0 8px;
-  font-size: 0.92rem;
-  line-height: 1.6;
-}
-
-.xiaohongshu-card img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.xiaohongshu-profile,
-.xiaohongshu-save {
-  display: block;
-  text-align: center;
-}
-
-.xiaohongshu-profile {
-  margin-top: 8px;
-  font-size: 0.95rem;
-}
-
-.xiaohongshu-save {
-  margin-top: 4px;
-  font-size: 0.85rem;
+  .sidebar:focus-visible,
+  .content:focus-visible {
+    outline: 2px solid var(--link);
+    outline-offset: 4px;
+  }
 }
