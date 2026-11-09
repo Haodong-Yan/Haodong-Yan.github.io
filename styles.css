@@ -291,3 +291,64 @@ a:hover {
     gap: 2px;
   }
 }
+
+
+/* Social profile: native disclosure supports mouse, keyboard and touch. */
+.sidebar:has(.xiaohongshu[open]) {
+  position: static;
+}
+
+.xiaohongshu summary {
+  width: fit-content;
+  color: #c72542;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.xiaohongshu summary:hover {
+  color: #9e1830;
+}
+
+.xiaohongshu summary:focus-visible {
+  outline: 2px solid #c72542;
+  outline-offset: 5px;
+  border-radius: 2px;
+}
+
+.xiaohongshu-card {
+  width: 100%;
+  max-width: 280px;
+  margin-top: 12px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.xiaohongshu-card p {
+  margin: 0 0 8px;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.xiaohongshu-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.xiaohongshu-profile,
+.xiaohongshu-save {
+  display: block;
+  text-align: center;
+}
+
+.xiaohongshu-profile {
+  margin-top: 8px;
+  font-size: 0.95rem;
+}
+
+.xiaohongshu-save {
+  margin-top: 4px;
+  font-size: 0.85rem;
+}
